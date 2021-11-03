@@ -47,8 +47,9 @@ The algorithm is similar to Global K-means, but the fast global K-means only exe
 
 <br />Complexity: KxN^2xD + K^2xNxDxT<br /><br />
 ### Mix Global K-means <br />
-From the result of Fast global K-means, the lowest initial inertia doesn't mean the lowest final inertia, and the difference gradually increase in each step of adding cluster center. However, the direction of choosing the point with lower inertia is the correct strategy, because the relation between initial inertia and final inertia imply that lower initial inertia has higher chance with lower final inertia.
-
+From the result of Fast global K-means, the lowest initial inertia doesn't mean the lowest final inertia, and the difference gradually increase in each step of adding cluster center. However, the direction of choosing the point with lower inertia is the correct strategy, because the figure of relation between initial inertia and final inertia imply that lower initial inertia has higher chance with lower final inertia.<br />
+In this figure, the ranks with lower number correspond to the lower inertia
+![Ranks](https://github.com/YuLin9568/Global_Kmeans/blob/global_fast_kmeans/Rank_inertia.png)
 Thus, the efficiency could be improved by only execution of K-means for the points with lower initial inertia, and the mix global K-means select N^0.5 data points to execute K-means algorithm.
 <br />Complexity: KxN^2xD + K^2xN^(3/2)xDxT<br /><br />
 ## Reference:
